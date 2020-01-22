@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
 	<body>
 		<h1>Coding Projects</h1>
-			<p>Please note that the code for some of these projects are on my <a href="https://github.com/nickc96">github</a>!</p>
+			<h2>Please note that the code for some of these projects are on my <a href="https://github.com/nickc96">github</a>!</h2>
+				<h3>Anime Suggester</h3>
+					<img src="coding_pictures/anime_suggester_poster.jpg" alt="Project Poster">
+					<p style="margin:0;">(Yes, the name of our project is embarrassing, it was not my idea)</p>
+					<h4>What is it?</h4>
+						<p>This project was a part of my Senior Projects course in college which I worked on with a friend. The idea of the project was to take a collection of anime that someone has seen and use machine learning to recommend a few more that they might like.</p>
+						<p>My friend and I split the work where he worked on parsing the website "MyAnimeList" to get a collection of anime and their features such as category, rating, episode count, etc. He also worked on the "UI" of the program. My part of the project was to actually work on the machine learning aspect. I decided to use java for this project since it was the language I was most familiar with.</p>
+					<h4>What did I do?</h4>
+						<p>I was taking a machine learning course during that semester, so I was learning new algorithms as the time went on. However, I found that the easiest algorithm to implement that actually performed decently was the K-nearest neighbors algorithm. The gist of this is that you take a weighted average of each feature and compare the two. You then select the one most similar to the one you are looking at and that is the result. In our case, I took each anime on the list of watched shows and generated the most similar ones from the database not already on the list of watched shows. I then repeated the same calculation for the other shows on the watched list and compiled the results.</p>
+						<p>A big part of this project was understanding that there would be a lot of calculations and a lot of comparisons that needed to be made. Since we were comparing a list to the whole database, each anime on the list would need to be compared to each anime in the database. In addition, I had to factor out any anime already on the list from the database. Using functions really helped organize everything so that the calculations could be taken one step at a time, but the scale of everything made my code a little messy.</p>
+					<h4>Results and How could I improve?</h4>
+						<p>At the end of the day, we tested on a few friends and looked at the results. There were a few suggestions that the suggester gave that they already saw and just didn't add to the list for the sake of time, but most of those were liked. The results of the shows that the suggester gave that they would be interested in watching was mixed at 168 that they would see and 127 that they wouldn't see.</p>
+						<p>Our suggester wasn't perfect by any means. The algorithm was skewed so that we weighted some of the features (ex. the genre of the show was weighted at 2x whereas the type was weighted at half). This inherently introduced bias, but we felt that it made sense from a perspective of what we looked for when discovering new shows and we decided that we could always change these ratios depending on what the person values. In addition, we handled multiple anime on the watched lists separately when we could have tried aggregating those results together. In terms of our results, we found that a lot of the suggestions that were given were actually separate seasons of the same series so that also skewed the results.</p>
+						<p>We could have also added additional features to build on this. I could have tried implementing more algorithms, we could have tried pulling the data straight from the website rather than storing the data all at once from a pull, we could have made UI changes, etc. This project has a lot of potential if we decided to continue working on it, but as we graduated and started our jobs, it became harder to do that. I still stay in touch with my friend so we would be able to continue it if we found the time for it.</p>
+					<p style="font-style: italic;">As a final note, I do want to mention that my friend added a fun easter egg to the code where if you type "tsundere", a stereotype in anime, the program will change its language to that of a "tsundere" personality. It just brings a little more life to our AI!</p>
 	</body>
 </html>

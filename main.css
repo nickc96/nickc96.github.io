@@ -16,6 +16,11 @@ h2{
 	margin: 0;
 }
 
+h3{
+	font-size:30px;
+	text-decoration: underline;
+}
+
 /* Style the navigation menu */
 .navbar {
 	width: 100%;
